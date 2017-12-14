@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#"%>
+
+<!DOCTYPE html>
+
+<script runat="server">
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        litBannerTitle.Text = Page.Title;
+        lblDate.Text = DateTime.Now.ToLongDateString();
+       
+        if(Page.IsPostBack)
+        {
+            pnl1.Visible = true;
+        }
+
+        lblTodayEvent.Text = "Selected Date is " + Calendar1.SelectedDate.ToShortDateString() + " No Event";
+        
+    }
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="Style1.css" rel="stylesheet" type="text/css" />  
+    <style type="text/css">
+        .auto-style1 {
+            width: 136px;
+        }
+        .auto-style2 {
+            width: 1px;
+        }
+        </style>
+</head>
+
+<body>
+    <div style:width="200">
+    <form id="form1" runat="server">
+    <asp:Panel ID="pnl1" runat="server" forecolor="blue" BackColor="#0080c0" Width="1227px" Height="267px">
+    <table cellpadding="0" cellspacing="100">
+        <tr>
+            <td class="auto-style2"><img src="../Images/Mars01.png"></td>
+            <td>
+                Welcome To MARS BASE <br />
+                <asp:Literal ID="litBannerTitle" runat="server" />
+             </td>
+             <td>
+                 <img src="../Images/mars02.png" />
+             </td>
+        </tr>
+        </table>
+        </asp:Panel>
+
+        <table cellpadding="0" cellspacing="100">
+
+        <tr>
+            <td width="200" valign="top" class="auto-style1">
+                <font size="+2" color="navy" face="Arial">               
+
+
+   <asp:Menu StaticDisplayLevels="2" ID="Menu1" runat="server" 
+       
+DataSourceID="SiteMapDataSource1"
+
+       StaticSubMenuIndent="25" ForeColor="Black" BackColor="White">
+       <StaticMenuItemStyle CssClass="MenuStaItm" />
+       <DynamicHoverStyle CssClass="MenuDynHov" />
+       <DynamicMenuItemStyle CssClass="MenuDynItm" />
+       <StaticHoverStyle CssClass="MenuStaHov" />
+</asp:Menu>
+
+<asp:SiteMapDataSource 
+ID="SiteMapDataSource1"
+ runat="server" />
+
+
+               
+                    <br>
+                    <br>
+
+                    <img src="../Images/mars_1x.png" style="height: 154px; width: 156px"> <br>
+
+                    <br>
+                    <br>
+
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#FF9999" BorderColor="#6600CC" BorderStyle="Double" BorderWidth="2px"
+            OnSelectionChanged="Page_Load">
+            <DayHeaderStyle BackColor="#CCCCCC" />
+            <OtherMonthDayStyle BackColor="White" />
+            <SelectedDayStyle BackColor="#FF3300" Font-Bold="True" />
+            <TitleStyle BackColor="#CC66FF" />
+            <TodayDayStyle BackColor="Yellow" />
+            <WeekendDayStyle BackColor="#CCFF99" />
+        </asp:Calendar>
+
+        <asp:Label ID="lblTodayEvent" runat="server" />
+        
+                </font>
+                    </td>
+
+             <td colspan="2" style="height:327px" valign="top">
+                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1"
+                     runat="server">
+                     </asp:ContentPlaceHolder>
+                 </td>
+
+            </tr>
+            
+          </table>        
+        </form>
+          <td class="auto-style1" align="center" > Copyright Yunhong Li </td>
+            <td class="footertxt" align="right">                 
+                <asp:Label ID="lblDate" runat="server" />
+             </td>
+            <td class="auto-style5"></td>
+        </div>
+    </body>
+    </html>

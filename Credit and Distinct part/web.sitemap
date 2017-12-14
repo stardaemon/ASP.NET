@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title=""  description="">
+        <siteMapNode url="~/1A_2/top.aspx" title="Home"  description="Home Page" />
+        <siteMapNode url="~/1A_2/registration.aspx" title="Registration"  description="page to register" />
+
+      <siteMapNode url="~/locked/aboutus.aspx" title="About Us"  description="page about us">
+        <siteMapNode url="~/locked/history.aspx" title="History"  description="history of compony" />
+        <siteMapNode url="~/locked/question.aspx" title="Frequently Asked Questions"  description="Question that asked frequently" />
+      </siteMapNode>
+
+      <siteMapNode url="~/1A_2/sitemap.aspx" title="Site Map"  description="Map of this site" />
+      <siteMapNode url="~/1A_2/documentation.aspx" title="Documentation"  description="variety documents in this website" />
+
+      <siteMapNode url="~/1A_2/email.aspx" title="Email"  description="Sending Email from Mars Base" />
+
+
+
+    </siteMapNode>
+</siteMap>
